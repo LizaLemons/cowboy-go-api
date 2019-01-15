@@ -10,13 +10,18 @@ go build && ./cowboy-go-api
 
 ---
 
-### Postman
+### See the App
+
+Postman: 
 
 ```
-GET to localhost:8080/people
+GET to localhost:8080/cowboys
 ```
 
-etc. 
+In browser, navigate to: 
+```
+localhost:8080/cowboys
+```
 
 
 ---
