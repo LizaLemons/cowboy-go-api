@@ -22,12 +22,13 @@ type Address struct {
 
 var cowboys []Cowboy
 
-//
+// show me all cowboys
 func GetCowboys(w http.ResponseWriter, r *http.Request) {
 	log.Println(cowboys)
 	json.NewEncoder(w).Encode(cowboys)
 }
 
+// show me one cowboy
 func GetCowboy(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	for _, item := range cowboys {
@@ -39,6 +40,7 @@ func GetCowboy(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(&Cowboy{})
 }
 
+// make me a cowboy, clown
 func CreateCowboy(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	var cowboy Cowboy
@@ -48,6 +50,7 @@ func CreateCowboy(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(cowboys)
 }
 
+// delete me a cowboy
 func DeleteCowboy(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	for index, item := range cowboys {
